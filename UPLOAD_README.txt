@@ -1,22 +1,31 @@
-NOLA EDITION HOMEPAGE UPDATE
+NOLA EDITION HOMEPAGE UPDATE — V2
 
-STEP 1 — Preserve the current Florida P page
-Before replacing index.html, duplicate the CURRENT live index.html in GitHub and name the copy:
-florida-p.html
+THIS VERSION ADDS / UPDATES:
+- New background-removed Archive Cap image
+- New NOLA EDITION Archive Jersey image
+- Women's Archive One-Piece swimwear
+- Women's Archive Bikini
+- Men's Swim Shorts
+- Sweatshorts
+- Sweatpants / Archive Joggers
+- Archive Tracksuit
 
-STEP 2 — Upload/replace these files in the ROOT of the repository
-- index.html (replace the current homepage)
-- hero-founder.webp
-- women-editorial.webp
-- tank-archive.webp
-- dress-archive.webp
-- hoodie-archive.webp
-- polo-archive.webp
-- hat-archive.webp
-- jersey-reunion.webp
+STEP 1 — Upload/replace these files in the ROOT of the GitHub repository
+- index.html (replace current homepage)
+- hat-archive.webp (replace old cap image)
+- jersey-reunion.webp (replace old jersey image)
+- swim-onepiece.webp
+- swim-bikini.webp
+- swim-shorts.webp
+- sweatshorts.webp
+- sweatpants.webp
+- tracksuit-archive.webp
 
-STEP 3 — Keep all existing Florida P files
-DO NOT delete:
+The ZIP also contains the previously used homepage assets so it can be uploaded as one complete package.
+
+STEP 2 — KEEP EXISTING FLORIDA P FILES
+Do not delete:
+- florida-p.html
 - design-01-black.webp
 - design-01-white.webp
 - design-02-black.webp
@@ -26,10 +35,25 @@ DO NOT delete:
 - 4DE515EE-8EA8-44FC-9ABC-1543677EF691.jpeg
 - CNAME
 
-STEP 4 — Product links
-The new core product cards temporarily point to:
+STEP 3 — PRODUCT LINKS
+All new NOLA EDITION product cards currently point to:
 https://nolaedition.square.site
 
-When your individual Square listings are ready, replace those URLs with each product's direct Square checkout link.
+When the individual Square checkout links are ready, replace each temporary URL in index.html with the direct product link.
 
-CURRENT FLORIDA P direct checkout links remain on florida-p.html.
+SITE ORGANIZATION
+ARCHIVE COLLECTION:
+- Archive Tank
+- Archive Maxi
+- Archive Hoodie
+- Embroidered Polo
+- Archive Cap
+- Archive Jersey
+
+RESORT & LEISURE:
+- Archive One-Piece
+- Archive Bikini
+- Swim Shorts
+- Sweatshorts
+- Sweatpants
+- Archive Tracksuit

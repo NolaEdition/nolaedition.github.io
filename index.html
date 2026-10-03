@@ -85,6 +85,13 @@
     .archive-card h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:29px;line-height:.95;margin:0 0 4px;font-weight:600}
     .archive-card small{font-size:8px;letter-spacing:.17em;text-transform:uppercase;color:#d6c5a9}
     .arrow{font-size:20px;color:var(--gold2)}
+    .collection-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:38px 0 18px;padding-top:30px;border-top:1px solid rgba(21,20,18,.16)}
+    .collection-heading:first-of-type{margin-top:6px;padding-top:0;border-top:0}
+    .collection-heading h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:34px;line-height:1;margin:0;font-weight:600}
+    .collection-heading span{font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#7b7166}
+    .archive-card.clean-card{background:#e8e1d7}
+    .archive-card.clean-card img{object-fit:contain;background:#f3eee6;padding:14px}
+    .archive-card.clean-card:after{background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.82))}
 
     .editorial{display:grid;grid-template-columns:1fr 1fr;min-height:680px;background:#080909}
     .story-panel{position:relative;overflow:hidden;min-height:680px}
@@ -127,7 +134,7 @@
       .wrap{width:calc(100% - 28px)}.announcement{font-size:7.5px;letter-spacing:.15em}.nav{height:64px}.brand{font-size:23px}.navlinks{top:64px}
       .hero-media{min-height:460px}.hero-copy{padding-top:46px}.hero-title{font-size:65px}.hero-tag{font-size:29px}.hero-actions{display:grid;grid-template-columns:1fr}.btn{width:100%}
       .reunion{padding:68px 0}.reunion-products{grid-template-columns:1fr 1fr}.reunion-card{min-height:300px}.reunion-card:last-child{grid-column:1/-1;min-height:310px}
-      .shop-section{padding:65px 0 72px}.section-head{display:block}.section-head p{margin-top:18px}.archive-grid{grid-template-columns:1fr 1fr;gap:10px}.archive-card,.archive-card img{height:320px;min-height:320px}.archive-card .meta{left:14px;right:14px;bottom:14px}.archive-card h3{font-size:23px}
+      .shop-section{padding:65px 0 72px}.section-head{display:block}.section-head p{margin-top:18px}.collection-heading{margin:30px 0 14px;padding-top:24px}.collection-heading h3{font-size:27px}.collection-heading span{display:none}.archive-grid{grid-template-columns:1fr 1fr;gap:10px}.archive-card,.archive-card img{height:320px;min-height:320px}.archive-card.clean-card img{padding:8px}.archive-card .meta{left:14px;right:14px;bottom:14px}.archive-card h3{font-size:23px}
       .story-panel{min-height:560px}.story-copy{left:24px;right:24px;bottom:28px}.archive-story{padding:72px 0}.archive-points{grid-template-columns:1fr}.community{padding:72px 0}.footer-grid{grid-template-columns:1fr}.copyright{display:block;line-height:1.8}
     }
   </style>
@@ -196,14 +203,25 @@
           </div>
           <p>Premium New Orleans apparel built around restraint, heritage and detail. Product links will point directly to individual checkout pages as each piece is added.</p>
         </div>
+        <!-- Replace Square homepage URLs below with individual item links as they are created. -->
+        <div class="collection-heading"><h3>Archive Collection</h3><span>Core pieces • New Orleans</span></div>
         <div class="archive-grid">
-          <!-- Replace Square homepage URLs below with individual item links as they are created. -->
           <a class="archive-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="tank-archive.webp" alt="NOLA EDITION Archive tank"><div class="meta"><div><h3>Archive Tank</h3><small>Women's • Archive Wear</small></div><span class="arrow">→</span></div></a>
           <a class="archive-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="dress-archive.webp" alt="NOLA EDITION Archive maxi dress"><div class="meta"><div><h3>Archive Maxi</h3><small>Women's • Full Length</small></div><span class="arrow">→</span></div></a>
           <a class="archive-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="hoodie-archive.webp" alt="NOLA EDITION Archive hoodie"><div class="meta"><div><h3>Archive Hoodie</h3><small>Unisex • Heavyweight</small></div><span class="arrow">→</span></div></a>
           <a class="archive-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="polo-archive.webp" alt="NOLA EDITION embroidered polo"><div class="meta"><div><h3>Embroidered Polo</h3><small>Men's • Piqué</small></div><span class="arrow">→</span></div></a>
-          <a class="archive-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="hat-archive.webp" alt="NOLA EDITION embroidered cap"><div class="meta"><div><h3>Archive Cap</h3><small>Embroidered • Washed Black</small></div><span class="arrow">→</span></div></a>
-          <a class="archive-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="jersey-reunion.webp" alt="NOLA EDITION Florida P jersey"><div class="meta"><div><h3>Jerseys</h3><small>New Orleans • Limited Editions</small></div><span class="arrow">→</span></div></a>
+          <a class="archive-card clean-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="hat-archive.webp" alt="NOLA EDITION embroidered Archive cap"><div class="meta"><div><h3>Archive Cap</h3><small>Embroidered • Washed Black</small></div><span class="arrow">→</span></div></a>
+          <a class="archive-card clean-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="jersey-reunion.webp" alt="NOLA EDITION New Orleans jersey front and back"><div class="meta"><div><h3>Archive Jersey</h3><small>New Orleans • Limited Edition</small></div><span class="arrow">→</span></div></a>
+        </div>
+
+        <div class="collection-heading"><h3>Resort & Leisure</h3><span>Archive 001 • New silhouettes</span></div>
+        <div class="archive-grid">
+          <a class="archive-card clean-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="swim-onepiece.webp" alt="NOLA EDITION women's one-piece swimwear"><div class="meta"><div><h3>Archive One-Piece</h3><small>Women's • Swimwear</small></div><span class="arrow">→</span></div></a>
+          <a class="archive-card clean-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="swim-bikini.webp" alt="NOLA EDITION bikini swim set"><div class="meta"><div><h3>Archive Bikini</h3><small>Women's • Two Piece</small></div><span class="arrow">→</span></div></a>
+          <a class="archive-card clean-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="swim-shorts.webp" alt="NOLA EDITION men's swim shorts"><div class="meta"><div><h3>Swim Shorts</h3><small>Men's • Map Print</small></div><span class="arrow">→</span></div></a>
+          <a class="archive-card clean-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="sweatshorts.webp" alt="NOLA EDITION washed black sweatshorts"><div class="meta"><div><h3>Sweatshorts</h3><small>Washed Black • Fleece</small></div><span class="arrow">→</span></div></a>
+          <a class="archive-card clean-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="sweatpants.webp" alt="NOLA EDITION Archive sweatpants"><div class="meta"><div><h3>Sweatpants</h3><small>Archive Joggers • Tapered Fit</small></div><span class="arrow">→</span></div></a>
+          <a class="archive-card" href="https://nolaedition.square.site" target="_blank" rel="noopener"><img src="tracksuit-archive.webp" alt="NOLA EDITION black and antique gold tracksuit"><div class="meta"><div><h3>Archive Tracksuit</h3><small>Zip Set • Archive 001</small></div><span class="arrow">→</span></div></a>
         </div>
       </div>
     </section>
