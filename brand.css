@@ -152,3 +152,31 @@ body.brand-home .announcement, body.brand-shop .announcement, body.brand-story .
   .shop-product p{display:none}
   .shop-product .btn{width:100%;padding:0 10px;font-size:8px;letter-spacing:.12em;min-height:43px;margin-top:15px}
 }
+
+/* Mobile refinement — compact luxury storefront */
+@media (max-width:640px){
+  .announcement{height:34px;min-height:34px;padding:0 14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:7.5px;letter-spacing:.14em;justify-content:flex-start}
+  .site-header{top:34px;min-height:78px;padding:14px 5vw;background:rgba(13,13,12,.98)}
+  .brand{font-size:20px;letter-spacing:.18em}
+  .brand-wordmark-mark{font-size:.72em;margin-left:5px}
+  .brand-shop .page-hero.shop-intro{padding:148px 6vw 52px;min-height:0;background:#11110f}
+  .brand-shop .page-hero.shop-intro .inner{width:100%;margin:0}
+  .brand-shop .page-hero.shop-intro .eyebrow{font-size:8px;letter-spacing:.24em;margin-bottom:14px}
+  .brand-shop .page-hero.shop-intro h1{font-size:clamp(54px,14vw,70px);line-height:.88;letter-spacing:.015em;margin:0 0 20px;max-width:100%}
+  .brand-shop .page-hero.shop-intro p{font-size:13px;line-height:1.65;max-width:33em;margin:0;color:rgba(244,239,229,.72)}
+  .shop-category{padding:52px 4vw 58px}
+  .shop-category-head{margin-bottom:26px}
+  .shop-category-head h2{font-size:clamp(42px,12vw,56px);line-height:.9;margin-top:8px}
+  .shop-category-head p{font-size:12px;line-height:1.65;margin-top:14px;max-width:34em}
+  .shop-product-grid{grid-template-columns:1fr 1fr;gap:7px}
+  .shop-product .shop-image{aspect-ratio:4/5}
+  .shop-product.contain .shop-image img{padding:8px}
+  .shop-product.cap .shop-image img{padding:12px}
+  .shop-product .shop-info{padding:13px}
+  .shop-product .kicker{font-size:6.5px;letter-spacing:.14em}
+  .shop-product h3{font-size:22px;line-height:.98;margin:7px 0 0}
+  .shop-product p{display:none}
+  .shop-product .btn{display:none}
+  .shop-product .shop-info::after{content:'View';margin-top:12px;font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:#80663a}
+  .dark .shop-product .shop-info::after{color:var(--brand-gold-soft)}
+}
