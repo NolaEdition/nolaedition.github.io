@@ -180,3 +180,236 @@ body.brand-home .announcement, body.brand-shop .announcement, body.brand-story .
   .shop-product .shop-info::after{content:'View';margin-top:12px;font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:#80663a}
   .dark .shop-product .shop-info::after{color:var(--brand-gold-soft)}
 }
+
+/* =============================================================
+   NOLA EDITION — editorial homepage rebuild
+   Brand world first. Products second. Mobile-first restraint.
+   ============================================================= */
+
+/* Header: slim, premium, and no longer a large fixed overlay. */
+body.editorial-home .announcement,
+body.brand-shop .announcement,
+body.brand-story .announcement{
+  min-height:30px;
+  height:30px;
+  padding:0 18px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  font-size:8px;
+  letter-spacing:.18em;
+}
+
+.site-header{
+  position:sticky !important;
+  top:0 !important;
+  min-height:72px;
+  padding:14px 4vw !important;
+  background:rgba(10,10,9,.96) !important;
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(244,239,229,.09) !important;
+}
+.site-header.scrolled{padding:10px 4vw !important;min-height:62px}
+.mobile-menu{inset:0 !important;padding-top:105px !important}
+
+/* Campaign hero */
+body.editorial-home{background:var(--brand-ink)}
+.editorial-home .campaign-hero{
+  position:relative;
+  min-height:min(88svh,900px);
+  overflow:hidden;
+  background:#0a0a09;
+  display:flex;
+  align-items:flex-end;
+}
+.editorial-home .campaign-hero>img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 50%;
+}
+.editorial-home .campaign-hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(8,8,7,.78) 0%,rgba(8,8,7,.30) 48%,rgba(8,8,7,.10) 72%),
+    linear-gradient(180deg,rgba(0,0,0,.02) 36%,rgba(8,8,7,.62) 100%);
+}
+.editorial-home .campaign-hero-copy{
+  position:relative;
+  z-index:2;
+  width:min(1440px,100%);
+  margin:0 auto;
+  padding:clamp(70px,9vw,130px) 5vw 8vh;
+}
+.editorial-home .campaign-hero h1{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:400;
+  text-transform:none;
+  letter-spacing:.01em;
+  font-size:clamp(58px,7vw,104px);
+  line-height:.9;
+  max-width:780px;
+  margin:14px 0 22px;
+}
+.editorial-home .campaign-hero-copy>p{
+  max-width:600px;
+  margin:0;
+  color:rgba(244,239,229,.82);
+  font-size:clamp(14px,1.35vw,18px);
+  line-height:1.8;
+}
+
+/* Shared editorial shells */
+.editorial-shell{width:min(1440px,100%);margin:0 auto}
+.editorial-heading-row{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(300px,.65fr);
+  gap:8vw;
+  align-items:end;
+  margin-bottom:48px;
+}
+.editorial-heading-row h2,
+.archive-editorial-copy h2,
+.closing-manifesto h2{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:400;
+  text-transform:none;
+  letter-spacing:.01em;
+  line-height:.88;
+  margin:10px 0 0;
+}
+.editorial-heading-row h2{font-size:clamp(54px,6vw,92px)}
+.editorial-intro{max-width:520px;justify-self:end}
+.editorial-intro p{margin:0 0 18px;line-height:1.8;color:#665f55}
+.light-copy .editorial-intro p{color:#a9a194}
+
+/* Featured products: large editorial cards, not cramped thumbnails. */
+.editorial-featured{background:var(--brand-ivory);color:#11110f;padding:clamp(72px,8vw,120px) 5vw}
+.featured-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 18px}
+.featured-card{display:block;background:#f0ebe2;border:1px solid rgba(13,13,12,.12)}
+.featured-media{aspect-ratio:4/3;overflow:hidden;background:#ede7dd}
+.featured-media img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.featured-media.contain img{object-fit:contain;padding:28px}
+.featured-media.dark-media{background:#11110f}
+.featured-media.dark-media img{object-fit:contain;padding:30px}
+.featured-card:hover .featured-media img{transform:scale(1.012)}
+.featured-meta{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;padding:20px 22px 24px}
+.featured-meta span{font-size:8px;letter-spacing:.18em;text-transform:uppercase;color:#7d6841}
+.featured-meta h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(30px,3vw,44px);line-height:.95;margin:6px 0 0}
+.featured-meta b{font-weight:400;color:#9b7e46;font-size:24px}
+
+/* Mission as editorial breathing room. */
+.brand-statement{background:#0f0f0e;color:var(--brand-cream);padding:clamp(92px,10vw,160px) 5vw;border-top:1px solid var(--brand-line);border-bottom:1px solid var(--brand-line)}
+.statement-inner{width:min(1150px,100%);margin:0 auto;text-align:center}
+.brand-statement blockquote{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:clamp(54px,7vw,104px);
+  font-weight:400;
+  line-height:.9;
+  margin:18px 0 28px;
+}
+.brand-statement p{max-width:720px;margin:0 auto;color:#aaa294;line-height:1.85}
+.statement-pillars{display:grid;grid-template-columns:repeat(4,1fr);margin-top:54px;border-top:1px solid var(--brand-line);border-left:1px solid var(--brand-line)}
+.statement-pillars span{padding:22px 12px;border-right:1px solid var(--brand-line);border-bottom:1px solid var(--brand-line);font-family:'Cormorant Garamond',Georgia,serif;font-size:26px}
+
+/* Resort: horizontal rail on mobile, spacious grid on desktop. */
+.resort-section{background:#11110f;color:var(--brand-cream);padding:clamp(78px,8vw,120px) 5vw}
+.product-rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.rail-card{background:#171715;border:1px solid var(--brand-line);min-width:0}
+.rail-media{aspect-ratio:4/5;overflow:hidden;background:#ebe6dc}
+.rail-media img{width:100%;height:100%;object-fit:cover}
+.rail-media.contain img{object-fit:contain;padding:18px}
+.rail-card>div:last-child{padding:18px 18px 22px}
+.rail-card span{font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-gold-soft)}
+.rail-card h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:32px;line-height:.95;margin:8px 0 0}
+
+/* Archive 001 is one story-led section instead of a wall of shirts. */
+.archive-editorial{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(420px,.75fr);background:var(--brand-cream);color:#11110f;min-height:720px}
+.archive-editorial-media{overflow:hidden;min-height:720px;background:#171715}
+.archive-editorial-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.archive-editorial-copy{padding:clamp(58px,7vw,110px);display:flex;flex-direction:column;justify-content:center}
+.archive-editorial-copy h2{font-size:clamp(58px,6vw,92px);margin:12px 0 24px}
+.archive-editorial-copy p{max-width:560px;color:#675f55;line-height:1.85}
+.archive-actions{display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:28px}
+
+.closing-manifesto{background:#0a0a09;color:var(--brand-cream);padding:clamp(90px,10vw,150px) 5vw}
+.manifesto-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:8vw;align-items:end}
+.closing-manifesto h2{font-size:clamp(54px,6vw,90px)}
+.closing-manifesto p{color:#aaa294;line-height:1.85;margin:0 0 26px;max-width:520px}
+
+/* Keep secondary pages refined after changing header behavior. */
+.brand-shop .page-hero,
+.brand-story .page-hero{padding-top:100px}
+
+@media(max-width:900px){
+  .editorial-heading-row,.archive-editorial,.manifesto-grid{grid-template-columns:1fr}
+  .editorial-intro{justify-self:start;margin-top:18px}
+  .archive-editorial-media{min-height:56svh}
+  .archive-editorial-copy{padding:58px 6vw 68px}
+  .product-rail{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:640px){
+  body.editorial-home .announcement{font-size:7px;letter-spacing:.12em;justify-content:center;padding:0 8px}
+  .site-header{min-height:62px !important;padding:9px 4vw !important}
+  .site-header.scrolled{min-height:58px !important;padding:7px 4vw !important}
+  .brand{font-size:18px !important;letter-spacing:.16em !important}
+  .menu-toggle{width:34px;height:34px}
+  .menu-toggle span{width:20px}
+
+  .editorial-home .campaign-hero{min-height:76svh}
+  .editorial-home .campaign-hero>img{object-position:center center}
+  .editorial-home .campaign-hero-overlay{background:linear-gradient(180deg,rgba(0,0,0,.03) 32%,rgba(7,7,6,.88) 100%)}
+  .editorial-home .campaign-hero-copy{padding:36px 6vw 42px}
+  .editorial-home .campaign-hero h1{font-size:clamp(45px,13vw,62px);line-height:.93;max-width:92%}
+  .editorial-home .campaign-hero-copy>p{font-size:12px;line-height:1.65;max-width:30em}
+  .editorial-home .campaign-hero .hero-actions{margin-top:22px;gap:8px}
+  .editorial-home .campaign-hero .btn{min-height:42px;padding:0 15px;font-size:8px;letter-spacing:.13em}
+
+  .editorial-featured,.resort-section{padding:58px 5vw}
+  .editorial-heading-row{display:block;margin-bottom:28px}
+  .editorial-heading-row h2{font-size:clamp(43px,12vw,57px);line-height:.92}
+  .editorial-intro p{font-size:12px;line-height:1.65}
+
+  .featured-grid{grid-template-columns:1fr;gap:16px}
+  .featured-media{aspect-ratio:5/4}
+  .featured-media.contain img{padding:16px}
+  .featured-media.dark-media img{padding:18px}
+  .featured-meta{padding:16px 17px 19px}
+  .featured-meta h3{font-size:31px}
+
+  .brand-statement{padding:78px 6vw}
+  .brand-statement blockquote{font-size:clamp(43px,12vw,61px)}
+  .brand-statement p{font-size:12px;line-height:1.7}
+  .statement-pillars{grid-template-columns:1fr 1fr;margin-top:36px}
+  .statement-pillars span{font-size:22px;padding:17px 8px}
+
+  .product-rail{
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+    scroll-snap-type:x mandatory;
+    padding-bottom:10px;
+    margin-right:-5vw;
+    scrollbar-width:none;
+  }
+  .product-rail::-webkit-scrollbar{display:none}
+  .rail-card{flex:0 0 78vw;scroll-snap-align:start}
+  .rail-card h3{font-size:30px}
+
+  .archive-editorial-media{min-height:50svh}
+  .archive-editorial-copy{padding:50px 6vw 58px}
+  .archive-editorial-copy h2{font-size:clamp(48px,13vw,64px)}
+  .archive-editorial-copy p{font-size:12px;line-height:1.7}
+  .archive-actions{align-items:flex-start;flex-direction:column}
+
+  .closing-manifesto{padding:72px 6vw}
+  .closing-manifesto h2{font-size:clamp(44px,12vw,60px)}
+  .closing-manifesto p{font-size:12px;line-height:1.7}
+
+  .brand-shop .page-hero,
+  .brand-story .page-hero{padding-top:72px}
+}
