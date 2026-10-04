@@ -413,3 +413,269 @@ body.editorial-home{background:var(--brand-ink)}
   .brand-shop .page-hero,
   .brand-story .page-hero{padding-top:72px}
 }
+
+
+/* =============================================================
+   PREMIUM MOBILE + ARCHIVE 001 SHOP REFINEMENT
+   ============================================================= */
+
+.florida-archive-shop{
+  background:var(--brand-ivory);
+  color:#11110f;
+  padding:clamp(78px,9vw,130px) 5vw;
+}
+.florida-shell{
+  width:min(1320px,100%);
+  margin:0 auto;
+}
+.florida-intro{
+  display:grid;
+  grid-template-columns:1.08fr .72fr;
+  gap:8vw;
+  align-items:end;
+  margin-bottom:46px;
+}
+.florida-intro h2{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:400;
+  font-size:clamp(58px,6.5vw,96px);
+  line-height:.88;
+  margin:10px 0 0;
+}
+.florida-intro-copy p{
+  margin:0 0 18px;
+  color:#6b645b;
+  line-height:1.8;
+  max-width:560px;
+}
+
+.florida-feature{
+  display:grid;
+  grid-template-columns:minmax(0,1.28fr) minmax(320px,.72fr);
+  min-height:620px;
+  margin-top:18px;
+  background:#11110f;
+  color:var(--brand-cream);
+  border:1px solid rgba(13,13,12,.15);
+}
+.florida-feature-secondary{
+  grid-template-columns:minmax(320px,.72fr) minmax(0,1.28fr);
+}
+.florida-feature-secondary .florida-feature-media{order:2}
+.florida-feature-media{
+  min-height:620px;
+  overflow:hidden;
+  background:#11110f;
+}
+.florida-feature-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.florida-feature-copy{
+  padding:clamp(38px,5vw,72px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.florida-feature-copy span,
+.florida-variant-copy span{
+  font-size:8px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--brand-gold-soft);
+}
+.florida-feature-copy h3{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:400;
+  font-size:clamp(46px,5vw,76px);
+  line-height:.9;
+  margin:14px 0 18px;
+}
+.florida-feature-copy p{
+  margin:0 0 30px;
+  color:#aaa294;
+  font-size:12px;
+}
+.florida-feature-copy b,
+.florida-variant-copy b{
+  font-weight:500;
+  font-size:9px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--brand-gold-soft);
+}
+
+.florida-variants{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:18px;
+}
+.florida-variant{
+  background:#f0ebe2;
+  border:1px solid rgba(13,13,12,.13);
+  color:#11110f;
+}
+.florida-variant-media{
+  aspect-ratio:16/10;
+  overflow:hidden;
+  background:#eee8de;
+}
+.florida-variant-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.florida-variant-copy{
+  padding:20px 22px 24px;
+}
+.florida-variant-copy span{color:#80663a}
+.florida-variant-copy h3{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:34px;
+  font-weight:500;
+  line-height:.95;
+  margin:8px 0 18px;
+}
+.florida-variant-copy b{color:#80663a}
+
+.florida-story-cta{
+  text-align:center;
+  padding:clamp(72px,8vw,115px) 20px 12px;
+}
+.florida-story-cta h3{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:clamp(45px,5vw,74px);
+  line-height:.93;
+  font-weight:400;
+  margin:14px auto 30px;
+  max-width:900px;
+}
+
+/* The header should support the clothes, not sit on top of them. */
+@media(max-width:640px){
+  .announcement{
+    min-height:27px !important;
+    height:27px !important;
+    padding:0 10px !important;
+    font-size:6.8px !important;
+    letter-spacing:.10em !important;
+    justify-content:center !important;
+  }
+  .site-header{
+    min-height:54px !important;
+    height:54px !important;
+    padding:6px 4.5vw !important;
+  }
+  .site-header.scrolled{
+    min-height:50px !important;
+    height:50px !important;
+    padding:5px 4.5vw !important;
+  }
+  .brand{
+    font-size:16.5px !important;
+    letter-spacing:.15em !important;
+  }
+  .brand-wordmark-mark{
+    font-size:.68em !important;
+    margin-left:4px !important;
+  }
+  .menu-toggle{
+    width:30px !important;
+    height:30px !important;
+  }
+  .menu-toggle span{
+    width:18px !important;
+    margin:4px auto !important;
+  }
+  .mobile-menu{
+    padding-top:82px !important;
+  }
+
+  .brand-shop .page-hero.shop-intro{
+    padding:50px 6vw 46px !important;
+  }
+  .brand-shop .page-hero.shop-intro h1{
+    font-size:clamp(46px,12vw,58px) !important;
+    margin-bottom:16px !important;
+  }
+  .brand-shop .page-hero.shop-intro p{
+    font-size:11.5px !important;
+    line-height:1.6 !important;
+  }
+
+  .florida-archive-shop{
+    padding:62px 5vw 70px;
+  }
+  .florida-intro{
+    display:block;
+    margin-bottom:28px;
+  }
+  .florida-intro h2{
+    font-size:clamp(48px,13vw,62px);
+  }
+  .florida-intro-copy{
+    margin-top:18px;
+  }
+  .florida-intro-copy p{
+    font-size:12px;
+    line-height:1.7;
+  }
+
+  /* Black variants get full editorial width. */
+  .florida-feature,
+  .florida-feature-secondary{
+    grid-template-columns:1fr;
+    min-height:0;
+    margin-top:14px;
+  }
+  .florida-feature-secondary .florida-feature-media{order:0}
+  .florida-feature-media{
+    min-height:0;
+    aspect-ratio:4/3;
+  }
+  .florida-feature-copy{
+    padding:25px 22px 30px;
+  }
+  .florida-feature-copy h3{
+    font-size:clamp(39px,11vw,52px);
+    line-height:.92;
+    margin:10px 0 14px;
+  }
+  .florida-feature-copy p{
+    margin-bottom:20px;
+    font-size:11px;
+  }
+
+  /* White colorways are intentionally secondary and compact. */
+  .florida-variants{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    margin-top:10px;
+  }
+  .florida-variant-media{
+    aspect-ratio:4/5;
+  }
+  .florida-variant-copy{
+    padding:14px 12px 16px;
+  }
+  .florida-variant-copy span{
+    font-size:6.2px;
+    letter-spacing:.12em;
+  }
+  .florida-variant-copy h3{
+    font-size:22px;
+    margin:7px 0 12px;
+  }
+  .florida-variant-copy b{
+    font-size:7px;
+  }
+
+  .florida-story-cta{
+    padding:62px 4px 0;
+  }
+  .florida-story-cta h3{
+    font-size:clamp(38px,10.5vw,50px);
+  }
+}

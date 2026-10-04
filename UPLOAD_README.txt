@@ -1,18 +1,26 @@
-NOLA EDITION CURRENT SITE UPDATE
+NOLA EDITION — PREMIUM REBUILD V2
 
-Upload these files to the ROOT of the existing GitHub Pages repository:
-- index.html (replace)
-- shop.html (replace)
-- story.html (replace)
-- brand.css (new)
-- assets/* (add all new files to the existing assets folder)
+Replace:
+- index.html
+- shop.html
+- brand.css
 
-DO NOT DELETE:
-- CNAME
+Add:
+- assets/campaign-hero.webp
+
+Keep:
 - styles.css
 - script.js
 - archive-001.html
+- story.html
+- CNAME
 - favicon.svg
-- existing Florida P assets
+- all existing product and Florida P assets
 
-New product buttons temporarily point to the general Square store. Existing Florida P links remain direct. Send the individual Square links later and replace those URLs in shop.html/index.html.
+This version:
+- uses a single editorial campaign hero
+- makes featured products full-width on mobile
+- reduces the mobile sticky header
+- makes Florida P a story-led Archive 001 section
+- gives black Florida P designs full-width treatment on mobile
+- keeps white variants as secondary two-column options
