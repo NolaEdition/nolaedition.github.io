@@ -1,8 +1,24 @@
-/* NOLA EDITION | storefront accessibility, product previews and inquiry flow.
- * Replacement for the original script.js. Preserves navigation, reveal effects
- * and the November 17, 2026 reunion countdown. Does not process payments.
+/* NOLA EDITION | premium storefront with Square-hosted track-set checkout.
+ * Replace only script.js. Keeps existing homepage, CSS and Florida P links.
+ * Before publishing, configure the checkout link below with the real Square item URL.
  */
 'use strict';
+// REQUIRED before publishing: create Women's Archive Track Set in Square with
+// Jacket size / Leggings size variations, then paste its real item purchase URL.
+// Never use the general Square storefront URL in place of a product checkout.
+const TRACK_SET_SQUARE_ITEM_URL = 'PASTE_REAL_SQUARE_TRACK_SET_PRODUCT_URL_HERE';
+const TRACK_SET_RETAIL_PRICE = 325; // Set to the EXACT price in Square, or change BOTH.
+// Display a realistic, supplier-confirmed dispatch window on the Square item.
+// This link intentionally keeps payments and size selection entirely in Square.
+const trackSetCheckoutReady = (() => {
+  try {
+    const url = new URL(TRACK_SET_SQUARE_ITEM_URL);
+    return url.protocol === 'https:' && (
+      url.hostname === 'square.link' || url.hostname.endsWith('.square.site') ||
+      url.hostname === 'squareup.com' || url.hostname.endsWith('.squareup.com')
+    );
+  } catch { return false; }
+})();
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
@@ -82,7 +98,7 @@ const catalog = {
   'archive-sweatpants': { name: 'Archive Sweatpants', type: 'Slim Fit · Fleece', image: 'assets/sweatpants.webp', description: 'Slim-fit sweatpants with map placement and archival branding.' },
   'archive-tracksuit': { name: 'Archive Tracksuit', type: 'Coordinated Set · Concept Preview', image: 'assets/tracksuit.webp', description: 'Coordinated trackwear carrying NOLA EDITION’s neighborhood archive design language.' },
   'womens-track-set': {
-    name: "Women's Archive Track Set", type: "Women's · Fitted Jacket + Leggings", image: 'assets/womens-track-set-look.webp',
+    name: "Women's Archive Track Set", type: "Women's · Coordinated Set", image: 'assets/womens-track-set-look.webp',
     gallery: ['assets/womens-track-set-look.webp','assets/womens-track-set-jacket.webp','assets/womens-track-set-leggings.webp'],
     description: 'A fitted black zip jacket and matching high-waisted leggings with antique-gold New Orleans street-map artwork, refined fleur-de-lis details and tailored athletic styling.',
     special: true
@@ -135,6 +151,10 @@ const css = `
 .nd-selectors select{min-height:48px;border:1px solid #a9a08f;background:white;color:#151411;padding:0 12px;border-radius:0}
 .nd-primary{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;background:#161411;color:#f5efe5!important;border:1px solid #161411;cursor:pointer;text-transform:uppercase;font:500 11px Montserrat,Arial,sans-serif;letter-spacing:.12em}
 .nd-primary:hover{background:#51412b;border-color:#51412b}
+.nd-sale-price{font:500 clamp(27px,3vw,37px) 'Cormorant Garamond',Georgia,serif; color:#151411;margin:0 0 12px}
+.nd-purchase-note{font-size:12px;line-height:1.8;color:#5f5649;margin:14px 0 20px}
+.nd-purchase-btn{display:flex;text-decoration:none;width:100%;font-weight:600}
+.nd-purchase-btn:focus-visible{outline:3px solid #b59658;outline-offset:3px}
 .nd-inquiry-result{margin-top:12px;font-size:12px;color:#4a422e;white-space:pre-wrap;line-height:1.7}
 .nd-inquiry-result textarea{width:100%;min-height:120px;background:white;border:1px solid #c4b8a6;padding:12px;font:12px/1.7 Arial,sans-serif}
 .nd-legal{font-size:11px;color:#716a60;line-height:1.8;margin-top:22px}
@@ -177,7 +197,7 @@ if (path === 'shop.html' && !new URLSearchParams(location.search).has('product')
     if (btn) { btn.href = link; btn.target = '_self'; btn.removeAttribute('rel'); btn.textContent = 'View details'; }
     const note = document.createElement('p');
     note.className = 'stock-note';
-    note.textContent = 'Concept preview · Pricing and production pending';
+    note.textContent = 'Explore details and availability';
     card.querySelector('.shop-info')?.appendChild(note);
   });
 
@@ -186,10 +206,10 @@ if (path === 'shop.html' && !new URLSearchParams(location.search).has('product')
     const newCard = document.createElement('article');
     newCard.className = 'shop-product contain nd-womens-listing';
     newCard.innerHTML = `<div class="shop-image"><a href="${detailUrl('womens-track-set')}" aria-label="View women's track set details"><img src="assets/womens-track-set-look.webp" loading="lazy" alt="Women's NOLA EDITION jacket and matching leggings, concept reference"></a></div>
-      <div class="shop-info"><span class="kicker">Women's · Limited Concept</span><h3><a href="${detailUrl('womens-track-set')}">Women's Archive Track Set</a></h3>
+      <div class="shop-info"><span class="kicker">Women's · Archive Collection</span><h3><a href="${detailUrl('womens-track-set')}">Women's Archive Track Set</a></h3>
       <p>Fitted zip jacket + matching high-waisted leggings in the signature map design.</p>
       <a class="btn" href="${detailUrl('womens-track-set')}">View details</a>
-      <p class="stock-note">Inquiry only · Factory cost and fit unconfirmed</p></div>`;
+      <p class="stock-note">Women's made-to-order track set</p></div>`;
     grid.prepend(newCard);
   }
 }
@@ -211,11 +231,11 @@ if (path === 'index.html') {
     section.className = 'nd-feature';
     section.setAttribute('aria-labelledby', 'nd-track-title');
     section.innerHTML = `<div class="nd-feature-image"><img src="assets/womens-track-set-look.webp" loading="lazy" alt="NOLA EDITION women's track set concept showing a fitted jacket and leggings"></div>
-      <div class="nd-feature-copy"><div class="nd-kicker">Women's Archive · In Development</div>
+      <div class="nd-feature-copy"><div class="nd-kicker">Women's Archive · Made to Order</div>
       <h2 id="nd-track-title">A set with<br>the city in it.</h2>
-      <p>Introducing the women's Archive Track Set, a black-and-antique-gold jacket and leggings concept honoring the streets and story of New Orleans.</p>
-      <div class="nd-shop-new"><a class="btn" href="${detailUrl('womens-track-set')}">Explore the Design</a></div>
-      <small class="nd-note">Concept imagery. Inquiries welcome; final specifications, price and lead time pending.</small></div>`;
+      <p>The women's Archive Track Set brings New Orleans' streets to a black-and-antique-gold zip jacket and matching leggings.</p>
+      <div class="nd-shop-new"><a class="btn" href="${detailUrl('womens-track-set')}">Shop the Set</a></div>
+      <small class="nd-note">Made-to-order. Select your sizing securely when placing an order.</small></div>`;
     featured.insertAdjacentElement('afterend', section);
   }
 }
@@ -229,50 +249,34 @@ if (path === 'shop.html') {
     if (main && product) {
       const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
       const gallery = product.gallery || [product.image];
+      const isTrackSet = productId === 'womens-track-set';
       document.title = `${product.name} | NOLA EDITION`;
       const desc = document.querySelector('meta[name="description"]');
-      if (desc) desc.content = `${product.name}. ${product.description} Pricing and availability subject to confirmation.`;
+      if (desc) desc.content = `${product.name}. ${product.description}${isTrackSet ? ' Made to order.' : ''}`;
+      const purchaseMarkup = isTrackSet ? `
+        <p class="nd-sale-price">$${TRACK_SET_RETAIL_PRICE.toFixed(2)}</p>
+        <p class="nd-purchase-note">Made to order. Choose your jacket size and leggings size at secure checkout. The expected dispatch timeframe is stated on the Square product before payment.</p>
+        ${trackSetCheckoutReady
+          ? `<a class="nd-primary nd-purchase-btn" href="${escapeHtml(TRACK_SET_SQUARE_ITEM_URL)}" target="_blank" rel="noopener noreferrer">Buy Now · Secure Checkout ↗</a>`
+          : `<p class="nd-purchase-note">Ordering will open when the secure checkout link is connected.</p>`}
+        <p class="nd-legal">Please review the sizing and made-to-order shipping details in checkout before purchasing. Garment photographs are design renderings.</p>
+      ` : `<div class="nd-status">Explore the design</div>
+          <p class="nd-purchase-note">Browse available pieces and purchase links in our <a href="https://nolaedition.square.site" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">Square storefront</a>.</p>`;
       main.innerHTML = `<section class="nd-product-detail" aria-labelledby="nd-product-title"><div class="nd-product-inner">
         <div class="nd-breadcrumb"><a href="shop.html">Shop</a> / ${escapeHtml(product.name)}</div>
         <div class="nd-product-grid"><div>
-          <div class="nd-main-image"><img id="nd-main-photo" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} concept product reference"></div>
+          <div class="nd-main-image"><img id="nd-main-photo" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} product design reference"></div>
           <div class="nd-photos" aria-label="Product imagery">${gallery.map((src,i)=>`<button type="button" class="nd-photo" data-src="${escapeHtml(src)}" aria-pressed="${i===0}" aria-label="Show product image ${i+1}"><img src="${escapeHtml(src)}" alt="${escapeHtml(product.name)} view ${i+1}"></button>`).join('')}</div>
         </div><div>
           <div class="nd-kicker">${escapeHtml(product.type)}</div><h1 id="nd-product-title" class="nd-product-title">${escapeHtml(product.name)}</h1>
           <p class="nd-product-desc">${escapeHtml(product.description)}</p>
-          <div class="nd-status">Preview only · Not available for checkout</div>
-          <div class="nd-availability"><h3>Made with intention.</h3>
-          <p>These are design references, not photographs of delivered inventory. Production method, final appearance, fit, materials, costs and delivery dates must be confirmed before accepting payment.</p></div>
-          ${product.special ? `<div class="nd-selectors"><label for="nd-jacket">Jacket size<select id="nd-jacket"><option value="M">Medium (M)</option><option value="L">Large (L)</option></select></label>
-          <label for="nd-leggings">Leggings size<select id="nd-leggings"><option value="M">Medium (M)</option><option value="L">Large (L)</option></select></label></div>` : ''}
-          <button type="button" class="nd-primary" id="nd-copy-inquiry">Copy product inquiry</button>
-          <div class="nd-inquiry-result" id="nd-inquiry-result" aria-live="polite"></div>
-          <p class="nd-legal">Copy the inquiry and send it through the same channel where you contacted NOLA EDITION. No order or payment is placed here. For currently available merchandise, <a href="https://nolaedition.square.site" target="_blank" rel="noopener" style="text-decoration:underline">browse the Square store</a> or visit the <a href="shop.html#florida-p" style="text-decoration:underline">Florida P collection</a>. Availability of this specific piece is not confirmed.</p>
+          ${purchaseMarkup}
         </div></div></div></section>`;
       main.querySelectorAll('.nd-photo').forEach(button => button.addEventListener('click', () => {
         const mainPhoto = document.getElementById('nd-main-photo');
         mainPhoto.src = button.dataset.src;
         main.querySelectorAll('.nd-photo').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
       }));
-      document.getElementById('nd-copy-inquiry').addEventListener('click', async () => {
-        const jacket = document.getElementById('nd-jacket')?.value;
-        const leggings = document.getElementById('nd-leggings')?.value;
-        const inquiry = `Hi NOLA EDITION, I would like details about ${product.name}.${product.special ? ` Jacket size: ${jacket}. Leggings size: ${leggings}.` : ''} Please confirm whether it can be made like the reference, the final price, and production/shipping time before I order.`;
-        const feedback = document.getElementById('nd-inquiry-result');
-        try {
-          if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
-          await navigator.clipboard.writeText(inquiry);
-          feedback.textContent = 'Inquiry copied. Paste it into your message to NOLA EDITION.';
-        } catch (error) {
-          feedback.replaceChildren();
-          const text = document.createElement('textarea');
-          text.value = inquiry;
-          text.setAttribute('aria-label', 'Select and copy your inquiry');
-          text.readOnly = true;
-          feedback.append('Select and copy this message to send to NOLA EDITION: ', text);
-          text.focus(); text.select();
-        }
-      });
     } else if (main) {
       document.title = 'Product Not Found | NOLA EDITION';
       main.innerHTML = '<section class="nd-product-detail"><div class="nd-product-inner"><h1 class="nd-product-title">Piece not found.</h1><p><a href="shop.html" style="text-decoration:underline">Return to the shop</a></p></div></section>';
