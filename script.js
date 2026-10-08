@@ -1,13 +1,11 @@
-/* NOLA EDITION | premium storefront with Square-hosted track-set checkout.
- * Replace only script.js. Keeps existing homepage, CSS and Florida P links.
- * Before publishing, configure the checkout link below with the real Square item URL.
+/* NOLA EDITION | premium storefront and direct Square checkout.
+ * Replace only script.js. Preserves mobile nav, archive pages, and Florida P links.
  */
 'use strict';
-// REQUIRED before publishing: create Women's Archive Track Set in Square with
-// Jacket size / Leggings size variations, then paste its real item purchase URL.
-// Never use the general Square storefront URL in place of a product checkout.
-const TRACK_SET_SQUARE_ITEM_URL = 'PASTE_REAL_SQUARE_TRACK_SET_PRODUCT_URL_HERE';
-const TRACK_SET_RETAIL_PRICE = 325; // Set to the EXACT price in Square, or change BOTH.
+// Square checkout link supplied by shop owner. Confirm that this link lets
+// customers select the correct jacket and leggings sizes before publishing.
+const TRACK_SET_SQUARE_ITEM_URL = 'https://square.link/u/LM8tHj3s';
+// Square checkout owns the actual price. Never display an unverified price on this product page.
 // Display a realistic, supplier-confirmed dispatch window on the Square item.
 // This link intentionally keeps payments and size selection entirely in Square.
 const trackSetCheckoutReady = (() => {
@@ -205,7 +203,7 @@ if (path === 'shop.html' && !new URLSearchParams(location.search).has('product')
   if (grid) {
     const newCard = document.createElement('article');
     newCard.className = 'shop-product contain nd-womens-listing';
-    newCard.innerHTML = `<div class="shop-image"><a href="${detailUrl('womens-track-set')}" aria-label="View women's track set details"><img src="assets/womens-track-set-look.webp" loading="lazy" alt="Women's NOLA EDITION jacket and matching leggings, concept reference"></a></div>
+    newCard.innerHTML = `<div class="shop-image"><a href="${detailUrl('womens-track-set')}" aria-label="View women's track set details"><img src="assets/womens-track-set-look.webp" loading="lazy" alt="Women's NOLA EDITION jacket and matching leggings, product design"></a></div>
       <div class="shop-info"><span class="kicker">Women's · Archive Collection</span><h3><a href="${detailUrl('womens-track-set')}">Women's Archive Track Set</a></h3>
       <p>Fitted zip jacket + matching high-waisted leggings in the signature map design.</p>
       <a class="btn" href="${detailUrl('womens-track-set')}">View details</a>
@@ -230,7 +228,7 @@ if (path === 'index.html') {
     const section = document.createElement('section');
     section.className = 'nd-feature';
     section.setAttribute('aria-labelledby', 'nd-track-title');
-    section.innerHTML = `<div class="nd-feature-image"><img src="assets/womens-track-set-look.webp" loading="lazy" alt="NOLA EDITION women's track set concept showing a fitted jacket and leggings"></div>
+    section.innerHTML = `<div class="nd-feature-image"><img src="assets/womens-track-set-look.webp" loading="lazy" alt="NOLA EDITION women's track set showing a fitted jacket and leggings"></div>
       <div class="nd-feature-copy"><div class="nd-kicker">Women's Archive · Made to Order</div>
       <h2 id="nd-track-title">A set with<br>the city in it.</h2>
       <p>The women's Archive Track Set brings New Orleans' streets to a black-and-antique-gold zip jacket and matching leggings.</p>
@@ -254,12 +252,12 @@ if (path === 'shop.html') {
       const desc = document.querySelector('meta[name="description"]');
       if (desc) desc.content = `${product.name}. ${product.description}${isTrackSet ? ' Made to order.' : ''}`;
       const purchaseMarkup = isTrackSet ? `
-        <p class="nd-sale-price">$${TRACK_SET_RETAIL_PRICE.toFixed(2)}</p>
-        <p class="nd-purchase-note">Made to order. Choose your jacket size and leggings size at secure checkout. The expected dispatch timeframe is stated on the Square product before payment.</p>
+        <p class="nd-purchase-note">Price, size selection and final order total are shown at secure checkout.</p>
+        <p class="nd-purchase-note">Made to order. Confirm your jacket size, leggings size, and delivery information on the Square checkout page before paying.</p>
         ${trackSetCheckoutReady
-          ? `<a class="nd-primary nd-purchase-btn" href="${escapeHtml(TRACK_SET_SQUARE_ITEM_URL)}" target="_blank" rel="noopener noreferrer">Buy Now · Secure Checkout ↗</a>`
+          ? `<a class="nd-primary nd-purchase-btn" href="${escapeHtml(TRACK_SET_SQUARE_ITEM_URL)}">Buy Now · Secure Checkout ↗</a>`
           : `<p class="nd-purchase-note">Ordering will open when the secure checkout link is connected.</p>`}
-        <p class="nd-legal">Please review the sizing and made-to-order shipping details in checkout before purchasing. Garment photographs are design renderings.</p>
+        <p class="nd-legal">Design visualization shown. Please review the product details and shipping estimate at checkout.</p>
       ` : `<div class="nd-status">Explore the design</div>
           <p class="nd-purchase-note">Browse available pieces and purchase links in our <a href="https://nolaedition.square.site" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">Square storefront</a>.</p>`;
       main.innerHTML = `<section class="nd-product-detail" aria-labelledby="nd-product-title"><div class="nd-product-inner">
