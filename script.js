@@ -281,3 +281,60 @@ if (path === 'shop.html') {
     }
   }
 }
+
+/* Archive Polo launch | NOLA EDITION
+ * Preserve all existing content while upgrading only the original polo cards.
+ */
+(() => {
+  'use strict';
+  const page = location.pathname.split('/').pop() || 'index.html';
+  const detailUrl = 'archive-polo.html';
+  const paymentUrl = 'https://square.link/u/hnGNwIs7';
+  const imageUrl = 'assets/nola-edition-archive-polo.jpg';
+  function replacePoloImage(img) {
+    if (!img) return;
+    img.src = imageUrl;
+    img.alt = 'NOLA EDITION Archive Polo, front and back with black and antique-gold heritage details';
+    img.onerror = function () { this.onerror = null; this.src = 'assets/archive-polo.webp'; };
+  }
+  if (page === 'shop.html' && !new URLSearchParams(location.search).has('product')) {
+    document.querySelectorAll('.shop-product').forEach(card => {
+      const heading = card.querySelector('.shop-info h3');
+      if (!heading || heading.textContent.trim().toLowerCase() !== 'embroidered polo') return;
+      heading.innerHTML = '<a href="archive-polo.html">Archive Polo</a>';
+      replacePoloImage(card.querySelector('.shop-image img'));
+      const photoLink = card.querySelector('.shop-image a');
+      if (photoLink) photoLink.href = detailUrl;
+      const kicker = card.querySelector('.kicker');
+      if (kicker) kicker.textContent = "Men's · Heritage Collection";
+      const description = card.querySelector('.shop-info > p:not(.stock-note)');
+      if (description) description.textContent = 'Black and antique gold. Signature fleur-de-lis, striped collar and cuffs, and vertical New Orleans back artwork.';
+      const checkout = card.querySelector('.shop-info a.btn');
+      if (checkout) {
+        checkout.href = paymentUrl;
+        checkout.target = '_blank';
+        checkout.rel = 'noopener noreferrer';
+        checkout.textContent = 'Buy Now ↗';
+      }
+      const note = card.querySelector('.stock-note');
+      if (note) note.textContent = 'Secure Square checkout · Sizes and pricing at checkout';
+    });
+  }
+  if (page === 'index.html') {
+    document.querySelectorAll('a.featured-card').forEach(card => {
+      const heading = card.querySelector('h3');
+      if (!heading || heading.textContent.trim().toLowerCase() !== 'embroidered polo') return;
+      card.href = detailUrl;
+      card.target = '_self';
+      card.removeAttribute('rel');
+      heading.textContent = 'Archive Polo';
+      const label = card.querySelector('.featured-meta span');
+      if (label) label.textContent = "Men's · Heritage Collection";
+      replacePoloImage(card.querySelector('img'));
+    });
+  }
+  // Old bookmarked product-preview routes now lead to the available item.
+  if (page === 'shop.html' && new URLSearchParams(location.search).get('product') === 'embroidered-polo') {
+    location.replace(detailUrl);
+  }
+})();
