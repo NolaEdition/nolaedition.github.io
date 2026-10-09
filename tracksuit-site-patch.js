@@ -107,3 +107,35 @@
     if (meta) meta.content = "NOLA EDITION Women's Archive Track Set: black cropped zip jacket and leggings with antique-gold New Orleans DTF designs. Made to order.";
   }
 })();
+
+/* NOLA EDITION | Women's DTF track set full-image mobile presentation.
+   The home feature was cropped by script.js object-fit:cover and a 4:3
+   mobile container. Show the entire square original photograph instead.
+   No other product, checkout, or brand styling is modified. */
+(() => {
+  'use strict';
+  if ((window.location.pathname.split('/').pop() || 'index.html') !== 'index.html') return;
+  if (document.getElementById('nd-womens-dtf-full-view-style')) return;
+  const style = document.createElement('style');
+  style.id = 'nd-womens-dtf-full-view-style';
+  style.textContent = `
+    .brand-home .nd-feature-image {
+      background: #f2f2f2 !important;
+    }
+    .brand-home .nd-feature-image img {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+    }
+    @media (max-width: 800px) {
+      .brand-home .nd-feature-image {
+        aspect-ratio: 1 / 1 !important;
+        height: auto !important;
+        min-height: 0 !important;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+})();
