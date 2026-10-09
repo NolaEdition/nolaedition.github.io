@@ -4,8 +4,8 @@
   'use strict';
   const destination = 'new-orleans-archive-tracksuit.html';
   const picture = 'assets/new-orleans-archive-tracksuit.webp';
-  const displayName = 'New Orleans Archive Tracksuit';
-  const oldName = 'Archive Tracksuit';
+  const displayName = 'New Orleans Archive Sweatsuit';
+  const oldName = 'Archive Sweatsuit';
   const cards = document.querySelectorAll('.rail-card, .shop-product');
   cards.forEach(card => {
     const title = card.querySelector('h3');
@@ -21,7 +21,7 @@
     const image = card.querySelector('img');
     if (image) {
       image.src = picture;
-      image.alt = 'NOLA EDITION New Orleans Archive Tracksuit in black and antique gold';
+      image.alt = 'NOLA EDITION New Orleans Archive Sweatsuit in black and antique gold';
     }
     const media = card.querySelector('.rail-media, .shop-image');
     if (media && media.classList.contains('rail-media')) media.classList.add('contain');
