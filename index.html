@@ -45,6 +45,22 @@ dialog{border:0;padding:0;max-width:min(940px,calc(100vw - 30px));width:900px;ma
 /* Mobile and SPA navigation reliability. Content must never remain transparent
    when a section is replaced after its original reveal observer was attached. */
 .reveal,.reveal.visible{opacity:1;transform:none;visibility:visible}
+
+/* Mobile storefront QC (2026-10-14): keep each image, label and title in its own flow. */
+#menuToggle{appearance:none;-webkit-appearance:none;color:var(--ink);border:0;box-shadow:none;-webkit-tap-highlight-color:transparent}
+#menuToggle svg{stroke:var(--ink)}
+.product-media{display:block}
+@media(max-width:780px){
+  .product-grid{align-items:start}
+  .product-card{display:flex;flex-direction:column;min-width:0}
+  .product-media{display:flex;flex-direction:column;aspect-ratio:auto;overflow:hidden;min-width:0;width:100%}
+  .product-media img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;object-position:center;background:#e7e0d6;flex:0 0 auto}
+  .product-tag{z-index:1}
+  .product-media .product-open{display:block;position:static;transform:none;flex:0 0 auto;box-sizing:border-box;text-align:center;line-height:1.5;letter-spacing:.09em;font-size:9px;width:100%;padding:10px 5px}
+  .product-info{padding:14px 1px 20px;min-width:0}
+  .product-info h3{font-size:clamp(19px,5.1vw,24px);line-height:1.16;overflow-wrap:break-word}
+  .product-info .meta{flex-wrap:wrap}
+}
 </style><link rel="canonical" href="https://nolaedition.com/"/></head><body><div aria-label="NOLA EDITION cinematic introduction" id="intro">
 <div class="intro-frame"></div>
 <svg aria-hidden="true" class="intro-graphic" preserveaspectratio="xMidYMid slice" viewbox="0 0 1100 730"><g id="introGrid"><path d="M20 60L1080 410 M-50 160L930 640 M-20 400L570 730 M60 700L420 0 M320 760L610 0 M540 780L865 0 M770 760L1000 0"></path><path d="M0 90L1100 90 M0 170L1100 170 M0 260L1100 260 M0 470L1100 470 M0 630L1100 630"></path></g><path d="M-20 565C140 480 235 630 365 525S610 540 735 400S965 370 1130 190" opacity=".35" stroke="#a88c5c" stroke-width="12"></path><path d="M-20 565C140 480 235 630 365 525S610 540 735 400S965 370 1130 190" stroke-width="2"></path></svg>
