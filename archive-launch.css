@@ -43,3 +43,19 @@
 .ar-campaign-photo{max-width:460px;width:100%;margin:27px 0 27px;border:1px solid rgba(182,154,107,.4);line-height:0;overflow:hidden;background:#171816}
 .ar-campaign-photo img{display:block;width:100%;height:auto;object-fit:contain;object-position:center}
 @media(max-width:750px){.ar-campaign-photo{max-width:none;margin:25px 0 29px}}
+
+/* Archive 002 product design gallery */
+.ar-design-gallery{background:#111412;color:#f3ecdf;padding:clamp(72px,9vw,120px) 0}
+.ar-design-gallery .ar-section-header p{color:#c9bdac}
+.ar-design-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 22px}
+.ar-design-card{min-width:0;border:1px solid #56452f;background:#191b19;scroll-margin-top:100px}
+.ar-design-media{display:block;overflow:hidden;background:#100f0d}
+.ar-design-media img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;filter:none;transition:transform .35s}
+.ar-design-media:hover img{transform:scale(1.025)}
+.ar-design-caption{padding:22px 24px 26px;border-top:1px solid #453c30}
+.ar-design-index{font:600 10px/1.7 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#b7a078}
+.ar-design-caption h3{font:400 clamp(31px,3.2vw,46px)/1.1 Georgia,serif;margin:9px 0 12px;color:#efe7d9}
+.ar-design-caption p{font:13px/1.75 Arial,sans-serif;color:#beb3a4;margin:0 0 19px}
+.ar-design-open{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#e2c69a;border-bottom:1px solid #b7a078;padding-bottom:5px}
+.ar-design-status{float:right;color:#a99c86;font:9px/1.4 Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:750px){.ar-design-grid{grid-template-columns:1fr;gap:19px}.ar-design-caption{padding:20px}.ar-design-caption h3{font-size:36px}.ar-design-status{float:none;display:block;margin-top:18px}}
