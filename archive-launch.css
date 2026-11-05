@@ -38,3 +38,8 @@
 @media(max-width:960px){.a1-page .a1-editorial-head>h1{font-size:clamp(61px,11vw,140px)}.a1-collage{grid-template-columns:repeat(3,1fr)}.a1-look-1,.a1-look-4,.a1-look-2,.a1-look-5{transform:none}.a1-products{grid-template-columns:repeat(2,1fr)}.a1-kicker-line{font-size:8px}}
 @media(max-width:680px){.a1-opening{padding:43px 0 55px}.a1-kicker-line{letter-spacing:.11em;font-size:7px}.a1-kicker-middle{margin-top:33px;font-size:8px;letter-spacing:.2em}.a1-page .a1-editorial-head>h1{font-size:clamp(40px,10.4vw,78px);margin-bottom:13px;letter-spacing:-.055em}.a1-subtitle{letter-spacing:.13em;font-size:11px}.a1-micro{font-size:7px;letter-spacing:.18em}.a1-collage{gap:7px;margin-top:25px}.a1-look span{font-size:8px;padding:20px 4px 7px}.a1-bottomline{font-size:7px;letter-spacing:.15em}.a1-products{gap:32px 12px}.a1-card-number{display:block;font-size:8px}.a1-card-number span{display:block;text-align:left;margin-top:5px}.a1-product h3{font-size:25px}.a1-product p{min-height:0}.a1-between{padding:65px 0}.a1-between-grid{grid-template-columns:1fr;gap:20px}}
 @media(max-width:430px){.a1-products{grid-template-columns:1fr}.a1-collage{grid-template-columns:repeat(2,1fr)}.a1-page .a1-editorial-head>h1{font-size:10.4vw}.a1-look{aspect-ratio:3/4}.a1-product h3{font-size:33px}}
+
+/* Archive 002 campaign photograph below headline */
+.ar-campaign-photo{max-width:460px;width:100%;margin:27px 0 27px;border:1px solid rgba(182,154,107,.4);line-height:0;overflow:hidden;background:#171816}
+.ar-campaign-photo img{display:block;width:100%;height:auto;object-fit:contain;object-position:center}
+@media(max-width:750px){.ar-campaign-photo{max-width:none;margin:25px 0 29px}}
