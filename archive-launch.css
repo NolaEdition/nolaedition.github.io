@@ -59,3 +59,19 @@
 .ar-design-open{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#e2c69a;border-bottom:1px solid #b7a078;padding-bottom:5px}
 .ar-design-status{float:right;color:#a99c86;font:9px/1.4 Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em}
 @media(max-width:750px){.ar-design-grid{grid-template-columns:1fr;gap:19px}.ar-design-caption{padding:20px}.ar-design-caption h3{font-size:36px}.ar-design-status{float:none;display:block;margin-top:18px}}
+
+/* Archive 002: individually linked Square checkout buttons */
+.a2-design-links{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin:10px 0 14px}
+.a2-square-button{background:#b69a6b;color:#111412;display:inline-flex;min-height:44px;align-items:center;justify-content:center;padding:13px 19px;text-decoration:none;text-align:center;font:700 10px/1.4 Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;transition:background .2s}
+.a2-square-button:hover{background:#e3cda7}
+.a2-design-links .ar-design-open{white-space:nowrap}
+.a2-visual-caption{display:block;color:#ad9e88;font:10px/1.7 Arial,sans-serif;letter-spacing:.03em}
+.a2-design-links .ar-design-status{float:none}
+.ar-design-media.a2-model-photo{display:flex;align-items:center;justify-content:center}
+.ar-design-media.a2-model-photo img{aspect-ratio:3/2;object-fit:contain;width:100%;height:auto;max-height:380px}
+.a2-lineup-action{display:flex;flex-direction:column;align-items:flex-start;gap:13px}
+.a2-lineup-action .ar-desc{margin:0}
+.a2-lineup-buy{font:700 10px/1.5 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#493723;border-bottom:1px solid #a68c62;padding-bottom:7px;display:inline-block}
+.a2-lineup-buy:hover{color:#a0783e}
+.a2-lineup-preview{color:#80766b;border-color:#bcb1a1}
+@media(max-width:750px){.a2-design-links{align-items:stretch}.a2-square-button{width:100%}.a2-lineup-action{grid-column:2}.ar-design-media.a2-model-photo img{max-height:420px}}
