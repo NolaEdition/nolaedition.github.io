@@ -4,10 +4,10 @@ Official GitHub Pages site for https://nolaedition.com.
 
 ## Current collection structure
 
-- **Archive 002 (featured)**: `archive-002.html`. Six-garment prelaunch editorial page. Product photos, sample signoff, individual Square product URLs, and launch date have not yet been supplied, so no product purchases or preorders are advertised here.
+- **Archive 002 (featured and shoppable)**: `archive-002.html`. Seven product-specific Square checkout links are displayed on the Archive 002 page, homepage gallery, and primary Shop page. The No. 27 jersey remains a preview without a purchase link. Artwork boards are creative presentations, and the crop top uses the existing campaign styling image until a separate product board is available.
 - **Archive 001 (available now):** `archive-001.html`. Six currently listed products are all Archive 001: Women\'s Signature Varsity, Archive Polo, Women\'s Archive Track Set, New Orleans Archive Sweatsuit, Girls\' Heritage Ensemble, and Boys\' Heritage Set. The collection page includes existing website imagery and six product-specific Square links. Florida P remains a separate custom project.\n- **Custom NOLA EDITION Designs:** `custom-designs.html`. Standalone showcase for the Florida P neighborhood reunion custom project with its four distinct product images and Square checkout URLs.
 - **NOLA EDITION CUSTOM services:** `custom.html`. Custom print/order quote service, now featuring a link to the project portfolio.
-- **Current shop**: `shop.html` routes into the main website. Currently displays the six Archive 001 products with image-backed Square checkout links, labeled as Archive 001.
+- **Current shop**: `shop.html` routes into the main website. Archive 002 appears first with seven individually linked products, followed by the six original Archive 001 listings in their own section.
 - **Archive index**: `archive.html` routes into the main website, placing Archive 002 ahead of Archive 001.
 
 ## Website implementation
@@ -20,16 +20,18 @@ Official GitHub Pages site for https://nolaedition.com.
 
 ## Merchandising requirements
 
-A shoppable product card requires **both** real/approved product imagery and a direct, product-specific Square purchase link. Do not substitute an unrelated Square store URL for a product-specific checkout, invent pricing or availability, or publish unapproved mockups as finished garment photography. Archive 002's six garments remain an **editorial preview**, separate from the buyable shop grid, until these requirements are met.
+A shoppable product card requires **both** an appropriate image and a direct, product-specific Square purchase link. Archive 002 uses five individual design-board images shared across six presentations and one campaign image for the crop top. The men's and women's T-shirts share a combined design board but have distinct checkouts. Do not present design boards as finished production photographs, invent prices or stock availability, or assign a generic checkout to the jersey.
 
-## Archive 002 lineup
+## Archive 002 checkout links
 
-1. Men's all-over-print T-shirt
-2. Men's all-over-print joggers
-3. Women's cropped windbreaker
-4. Women's long-sleeve crop top
-5. Unisex recycled hoodie
-6. Women's yoga leggings
+1. Hoodie: https://square.link/u/BP1uq24s
+2. Crop top: https://square.link/u/eJJF9HhO
+3. Leggings: https://square.link/u/JMF0GvDw
+4. Joggers: https://square.link/u/0ZosJg8W
+5. Men's T-shirt: https://square.link/u/pw66vscv
+6. Women's T-shirt: https://square.link/u/4YoIxVJW
+7. Cropped windbreaker: https://square.link/u/QCyPqOFn
+8. Jersey No. 27: design preview, no checkout link supplied
 
 Visual direction: deep black, flat muted antique gold, city-grid/river graphics, precise NOLA EDITION lettering and consistent archive language. No metallic rendering.
 
