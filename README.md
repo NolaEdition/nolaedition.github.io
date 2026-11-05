@@ -5,18 +5,17 @@ Official GitHub Pages site for https://nolaedition.com.
 ## Current collection structure
 
 - **Archive 002 (featured)**: `archive-002.html`. Six-garment prelaunch editorial page. Product photos, sample signoff, individual Square product URLs, and launch date have not yet been supplied, so no product purchases or preorders are advertised here.
-- **Archive 001 (numbered collection):** `archive-001.html`. Separate placeholder for the genuine original Archive 001 release. No unverified product imagery, links, or Florida P references. Not indexed until proper content is available.
-- **Custom NOLA EDITION Designs:** `custom-designs.html`. Standalone showcase for the Florida P neighborhood reunion custom project with its four distinct product images and Square checkout URLs.
+- **Archive 001 (available now):** `archive-001.html`. Six currently listed products are all Archive 001: Women\'s Signature Varsity, Archive Polo, Women\'s Archive Track Set, New Orleans Archive Sweatsuit, Girls\' Heritage Ensemble, and Boys\' Heritage Set. The collection page includes existing website imagery and six product-specific Square links. Florida P remains a separate custom project.\n- **Custom NOLA EDITION Designs:** `custom-designs.html`. Standalone showcase for the Florida P neighborhood reunion custom project with its four distinct product images and Square checkout URLs.
 - **NOLA EDITION CUSTOM services:** `custom.html`. Custom print/order quote service, now featuring a link to the project portfolio.
-- **Current shop**: `shop.html` routes into the main website. Currently shows six other confirmed image-backed and individually Square-linked pieces.
+- **Current shop**: `shop.html` routes into the main website. Currently displays the six Archive 001 products with image-backed Square checkout links, labeled as Archive 001.
 - **Archive index**: `archive.html` routes into the main website, placing Archive 002 ahead of Archive 001.
 
 ## Website implementation
 
 - `index.html` includes the primary homepage, style rules, and an embedded route/content map for dynamic page transitions. **Homepage content occurs twice:** as initial static markup and again as `pages["index.html"].content` in the embedded script. Update both or navigation may revert a change.
 - `archive-launch.css` is the shared responsive stylesheet for the dedicated numbered archive and custom-design landing pages.
-- `archive-001.html`, `archive-002.html`, and `custom-designs.html` are standalone pages. Archive 001 is noindex until its authentic collection is ready. Main-site links to these pages leave the embedded SPA router and load the standalone page.
-- `sitemap.xml` indexes the homepage, Archive 002 and Custom Designs. The unready Archive 001 page is noindex.
+- `archive-001.html`, `archive-002.html`, and `custom-designs.html` are standalone pages. Archive 001 is now indexable because the owner confirmed the six current products are its authentic collection. Main-site links to these pages leave the embedded SPA router and load the standalone page.
+- `sitemap.xml` indexes the homepage, Archive 002, Archive 001, and Custom Designs. Archive 001 has been added back to the sitemap.
 - Do not treat older `nola-preview.html` or `index-backup-20261014.html` as the active website.
 
 ## Merchandising requirements
