@@ -338,3 +338,30 @@ if (path === 'shop.html') {
     location.replace(detailUrl);
   }
 })();
+
+
+/* BIG 9 release: navigate to the live 11-piece Square collection. */
+(() => {
+  const destination = 'big-9.html';
+  const here = location.pathname.split('/').pop() || 'index.html';
+  const addLink = (nav) => {
+    if (!nav || nav.querySelector('a[href="big-9.html"]')) return;
+    const link = document.createElement('a');
+    link.href = destination;
+    link.textContent = 'BIG 9 / 9X';
+    link.setAttribute('aria-label', 'Shop the BIG 9 / 9X collection');
+    nav.appendChild(link);
+  };
+  addLink(document.querySelector('.site-header nav, .desktop-nav, .nav-links'));
+  addLink(document.querySelector('.mobile-menu'));
+  if (here === 'index.html') {
+    const main = document.querySelector('main');
+    if (!main || document.getElementById('big9-launch-link')) return;
+    const section = document.createElement('section');
+    section.id = 'big9-launch-link';
+    section.setAttribute('aria-label', 'Shop BIG 9');
+    section.style.cssText = 'background:#11120f;border-block:1px solid #806b4a;color:#f3e8d3;padding:42px 6vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px';
+    section.innerHTML = '<div><span style="display:block;font:600 10px Arial,sans-serif;letter-spacing:.22em;color:#bfa172;text-transform:uppercase;margin-bottom:12px">NOLA EDITION · NINTH WARD</span><strong style="font:400 clamp(30px,4.5vw,56px)/1 Georgia,serif">The BIG 9 Collection</strong><p style="font:14px/1.7 Georgia,serif;color:#c8b9a1;margin:12px 0 0">11 pieces. One neighborhood. The full 9X lineup is ready to shop.</p></div><a href="big-9.html" style="display:inline-flex;padding:16px 24px;background:#f3e8d3;color:#15130e;font:600 11px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;text-decoration:none">Shop BIG 9 ↗</a>';
+    main.insertBefore(section, main.firstElementChild);
+  }
+})();
