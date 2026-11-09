@@ -75,3 +75,31 @@
 .a2-lineup-buy:hover{color:#a0783e}
 .a2-lineup-preview{color:#80766b;border-color:#bcb1a1}
 @media(max-width:750px){.a2-design-links{align-items:stretch}.a2-square-button{width:100%}.a2-lineup-action{grid-column:2}.ar-design-media.a2-model-photo img{max-height:420px}}
+
+
+/* Archive 002: compact mobile shopping cards, original image previews remain clickable. */
+@media(max-width:750px){
+.archive-002-page .ar-design-gallery{padding:48px 0 62px}
+.archive-002-page .ar-design-gallery .ar-section-header{margin-bottom:23px}
+.archive-002-page .ar-design-gallery .ar-section-header h2{font-size:clamp(40px,10.3vw,64px);line-height:.98}
+.archive-002-page .ar-design-gallery .ar-section-header p{margin-top:16px;font-size:13px;line-height:1.65}
+.archive-002-page .ar-design-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:13px}
+.archive-002-page .ar-design-card{display:grid;grid-template-columns:minmax(112px,36%) minmax(0,1fr);align-items:stretch;min-width:0;scroll-margin-top:130px}
+.archive-002-page .ar-design-media,.archive-002-page .ar-design-media.a2-model-photo{display:flex;align-items:center;justify-content:center;min-height:182px;height:100%;padding:8px;border-right:1px solid #463b2a;overflow:hidden}
+.archive-002-page .ar-design-media img,.archive-002-page .ar-design-media.a2-model-photo img{display:block;width:100%;height:auto;max-width:100%;max-height:230px;aspect-ratio:auto;object-fit:contain;object-position:center;transform:none}
+.archive-002-page .ar-design-caption{display:flex;flex-direction:column;min-width:0;padding:17px 15px 15px;border-top:0}
+.archive-002-page .ar-design-index{font-size:9px;letter-spacing:.11em;line-height:1.6}
+.archive-002-page .ar-design-caption h3{font-size:clamp(22px,6.2vw,29px);line-height:1.08;margin:8px 0 10px;overflow-wrap:break-word}
+.archive-002-page .ar-design-caption p{font-size:11px;line-height:1.55;margin:0 0 13px}
+.archive-002-page .a2-design-links{display:flex;flex-direction:column;align-items:flex-start;gap:11px;margin:auto 0 12px}
+.archive-002-page .a2-design-links .a2-square-button{width:100%;min-height:42px;padding:11px 10px;font-size:9px;line-height:1.35;letter-spacing:.085em;text-align:center}
+.archive-002-page .a2-design-links .ar-design-open{font-size:9px;line-height:1.4;letter-spacing:.08em;white-space:normal}
+.archive-002-page .a2-visual-caption{font-size:9px;line-height:1.55}
+.archive-002-page #lineup{display:none}
+}
+@media(max-width:360px){
+.archive-002-page .ar-design-card{grid-template-columns:minmax(100px,35%) minmax(0,1fr)}
+.archive-002-page .ar-design-caption{padding:13px 11px}
+.archive-002-page .ar-design-caption h3{font-size:21px}
+.archive-002-page .a2-design-links .a2-square-button{padding-inline:5px;font-size:8px}
+}
