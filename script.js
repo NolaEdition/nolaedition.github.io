@@ -361,7 +361,7 @@ if (path === 'shop.html') {
     section.id = 'big9-launch-link';
     section.setAttribute('aria-label', 'Shop BIG 9');
     section.style.cssText = 'background:#11120f;border-block:1px solid #806b4a;color:#f3e8d3;padding:42px 6vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px';
-    section.innerHTML = '<div><span style="display:block;font:600 10px Arial,sans-serif;letter-spacing:.22em;color:#bfa172;text-transform:uppercase;margin-bottom:12px">NOLA EDITION · NINTH WARD</span><strong style="font:400 clamp(30px,4.5vw,56px)/1 Georgia,serif">The BIG 9 Collection</strong><p style="font:14px/1.7 Georgia,serif;color:#c8b9a1;margin:12px 0 0">11 pieces. One neighborhood. The full 9X lineup is ready to shop.</p></div><a href="big-9.html" style="display:inline-flex;padding:16px 24px;background:#f3e8d3;color:#15130e;font:600 11px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;text-decoration:none">Shop BIG 9 ↗</a>';
+    section.innerHTML = '<div><span style="display:block;font:600 10px Arial,sans-serif;letter-spacing:.22em;color:#bfa172;text-transform:uppercase;margin-bottom:12px">NOLA EDITION · NINTH WARD</span><strong style="font:400 clamp(30px,4.5vw,56px)/1 Georgia,serif">The BIG 9 Collection</strong><p style="font:14px/1.7 Georgia,serif;color:#c8b9a1;margin:12px 0 0">Rooted in the Ninth Ward. Built to carry the culture.</p></div><a href="big-9.html" style="display:inline-flex;padding:16px 24px;background:#f3e8d3;color:#15130e;font:600 11px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;text-decoration:none">Shop BIG 9 ↗</a>';
     main.insertBefore(section, main.firstElementChild);
   }
 })();
