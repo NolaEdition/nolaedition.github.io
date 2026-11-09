@@ -103,3 +103,17 @@
 .archive-002-page .ar-design-caption h3{font-size:21px}
 .archive-002-page .a2-design-links .a2-square-button{padding-inline:5px;font-size:8px}
 }
+
+/* Compact archive and event navigation, designed for growing collections. */
+@media(min-width:751px){
+.ar-nav{padding-inline:clamp(12px,2vw,32px);grid-template-columns:minmax(0,1.4fr) auto minmax(0,.7fr)}
+.ar-nav .ar-linkset{gap:clamp(8px,1vw,17px);min-width:0}
+.ar-nav a:not(.ar-logo){font-size:9px;letter-spacing:.055em}
+}
+@media(max-width:750px){
+.ar-nav{gap:8px;padding:12px 14px}
+.ar-nav .ar-linkset{display:flex;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;width:100%;max-width:100%;gap:18px;padding:6px 0 9px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.ar-nav .ar-linkset::-webkit-scrollbar{display:none}
+.ar-nav a:not(.ar-logo){flex:0 0 auto;font-size:9px;letter-spacing:.075em;line-height:1.4}
+.ar-logo{grid-row:1}
+}
